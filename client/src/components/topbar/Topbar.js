@@ -1,12 +1,17 @@
 import { Chat, Notifications, Person, Search } from '@material-ui/icons';
 import './topbar.css'
 import { Link } from 'react-router-dom'
+import { useContext } from 'react';
+import { AuthContext } from '../../context/AuthContext';
 
 const Topbar = () => {
+
+    const { user } = useContext(AuthContext);
+
     return (
         <div className='topbarContainer'>
             <div className='topbarLeft'>
-                <Link to="/" style={{"textDecoration": "none"}}>
+                <Link to="/" style={{ "textDecoration": "none" }}>
                     <span className='logo'>
                         Look
                     </span>
@@ -20,9 +25,11 @@ const Topbar = () => {
             </div>
             <div className='topbarRight'>
                 <div className='topbarLinks'>
-                    <span className='topbarLink'>
-                        Homepage
-                    </span>
+                    <Link to="/" style={{ "textDecoration": "none" }}>
+                        <span className='topbarLink'>
+                            Homepage
+                        </span>
+                    </Link>
                     <span className='topbarLink'>
                         Timeline
                     </span>
@@ -47,7 +54,9 @@ const Topbar = () => {
                         </span>
                     </div>
                 </div>
-                <img src="/assets/person/1.jpeg" alt='profile' className='topbarImage' />
+                <Link to={`/profile/${user.username}`}>
+                    <img src={user.profilePicture || "/assets/person/default.png"} alt='profile' className='topbarImage' />
+                </Link>
             </div>
         </div>
     )
