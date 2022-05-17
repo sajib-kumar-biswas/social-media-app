@@ -8,7 +8,7 @@ function Login() {
   const email = useRef();
   const password = useRef();
 
-  const {user,isFetching,error,dispatch} = useContext(AuthContext);
+  const {user,isFetching,dispatch} = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,11 +44,11 @@ function Login() {
               className="loginInput"
             />
             <button className="loginButton" type='submit' disabled={isFetching}>
-              {isFetching ? <CircularProgress color='white' size={20} /> : "Log In"}
+              {isFetching ? <CircularProgress color='secondary' size={20} /> : "Log In"}
             </button>
             <span className="loginForget">Forgot Password?</span>
             <button className="loginRegisterButton" disabled={isFetching}>
-            {isFetching ? <CircularProgress color='white' size={20} /> : "Create a New Account"}
+            {isFetching ? <CircularProgress color='secondary' size={20} /> : "Create a New Account"}
             </button>
           </form>
         </div>

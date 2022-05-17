@@ -32,18 +32,18 @@ const Rightbar = ({ user }) => {
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">City : </span>
-            <span className="rightbarInfoValue">{user.city}</span>
+            <span className="rightbarInfoValue">{user.city || "Dhaka"}</span>
           </div>
 
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">From : </span>
-            <span className="rightbarInfoValue">{user.from}</span>
+            <span className="rightbarInfoValue">{user.from || "Kushtia"}</span>
           </div>
 
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Relationship : </span>
             <span className="rightbarInfoValue">
-              {user.relationship || 'complicated'}
+              {user.relationship || 'single'}
             </span>
           </div>
         </div>
