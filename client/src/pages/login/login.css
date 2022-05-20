@@ -72,6 +72,12 @@
   color: #1775ee;
 }
 
+.loginRightMini{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
 .loginRegisterButton {
   height: 50px;
   border-radius: 10px;
@@ -81,8 +87,4 @@
   font-size: 20px;
   font-weight: 500;
   cursor: pointer;
-}
-
-.loginRegisterButton:disabled {
-  cursor: not-allowed;
 }

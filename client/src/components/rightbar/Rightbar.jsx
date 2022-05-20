@@ -1,6 +1,7 @@
 import './rightbar.css';
 import { Users } from '../../dummyData';
 import Online from '../online/Online';
+import RightBox from '../rightbox/RightBox';
 
 const Rightbar = ({ user }) => {
   const HomeRightbar = () => {
@@ -50,54 +51,11 @@ const Rightbar = ({ user }) => {
 
         <h4 className="rightbarTitle">Followings</h4>
         <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
-            <img
-              src="/assets/person/1.jpeg"
-              alt=""
-              className="rightbarFollowingImage"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="/assets/person/2.jpeg"
-              alt=""
-              className="rightbarFollowingImage"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="/assets/person/3.jpeg"
-              alt=""
-              className="rightbarFollowingImage"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="/assets/person/4.jpeg"
-              alt=""
-              className="rightbarFollowingImage"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="/assets/person/5.jpeg"
-              alt=""
-              className="rightbarFollowingImage"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="/assets/person/6.jpeg"
-              alt=""
-              className="rightbarFollowingImage"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
+          {
+            Users.map((u) => (
+              <RightBox key={u.id} user={u} />
+            ))
+          }
         </div>
       </>
     );

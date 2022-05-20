@@ -77,10 +77,12 @@ function Register() {
             <button type="submit" className="loginButton">
               Sign Up
             </button>
-            <button className="loginRegisterButton">
+          </form>
+          <div className="loginRightMini">
+          <button className="loginRegisterButton" onClick={()=>{navigate("/login")}}>
               Already have an Account?
             </button>
-          </form>
+          </div>
         </div>
       </div>
     </div>
